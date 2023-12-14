@@ -35,14 +35,15 @@ const Inicial = () => {
     useEffect(() => {
 
         const intervalId = setInterval(() => {
-          // Crie uma cópia embaralhada do array de imagens
-          const shuffledImages = [...images].sort(() => Math.random() - 0.5);
-    
-          // Atualize o estado com as imagens embaralhadas
-          setImages(shuffledImages);
-        }, 100000); // 10 segundos em milissegundos
-    
-        // Limpe o intervalo quando o componente for desmontado
+            const index1 = Math.floor(Math.random() * images.length);
+            let index2 = Math.floor(Math.random() * images.length);
+            while (index2 === index1) {
+              index2 = Math.floor(Math.random() * images.length);
+            }
+            const updatedImages = [...images];
+            [updatedImages[index1], updatedImages[index2]] = [updatedImages[index2], updatedImages[index1]];
+            setImages(updatedImages);
+          }, 1000);
         return () => clearInterval(intervalId);
       }, [images]); 
 
@@ -53,7 +54,7 @@ const Inicial = () => {
         // Verificar se a senha digitada é igual a "1231212"
         if (senhaDigitada === '1231212') {
             // Redirecionar para a rota /books
-            window.location.href = '/books';
+            window.location.href = '/book';
         } else {
             // Senha incorreta, você pode exibir uma mensagem de erro ou fazer o que for apropriado
             console.log('Senha incorreta. Tente novamente.');
@@ -64,7 +65,10 @@ const Inicial = () => {
         <div className='background-inicial'>
             <div className='image-grid'>
                 {images.map((_, index) =>
-                    <img key={index} src={_} alt={`Image ${index + 1}`} className='grid-image' />
+                <div className='grid-image'>
+ <img key={index} src={_} alt={`Image ${index + 1}`}  />
+                </div>
+                   
                 )}
             </div>
             <div className='principal-inicial'>

@@ -7,14 +7,34 @@
     display: grid;
     grid-template-columns: repeat(6, 0fr);
     width: 100%;
-    z-index:0
+    z-index:0;
+  overflow: hidden;
+  height: 100%;
+    transition: transform 1.4s ease-in-out;
+    background-color: black;
 }
-
-.image-grid img{
+.grid-image{
+    transition: transform 1.4s ease-in-out; /* Adicione a transição à propriedade transform */
+    animation-name: pageEfect;
+    animation-duration: 1.4s;
+    opacity: 1;
     width: 16.66vw;
     height: 50vh;
 }
-
+.grid-image img{
+    width: 100%;
+    height: 100%;
+   
+}
+@keyframes pageEfect {
+    0% {
+      opacity: 0;
+    }
+   
+    100% {
+      opacity: 1;
+    }
+  }
 .principal-inicial{
     display: flex;
     justify-content: center;
