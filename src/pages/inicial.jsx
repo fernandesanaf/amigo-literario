@@ -4,16 +4,16 @@ import React, { useState, useEffect } from 'react';
 import './../styles/inicial.css'
 import img1 from '../imgBook/img1.jpg'
 import img2 from '../imgBook/img2.jpg'
-import img3 from '../imgBook/img3.png'
+import img3 from '../imgBook/img3.jpg'
 import img4 from '../imgBook/img4.jpg'
 import img5 from '../imgBook/img5.jpg'
-import img6 from '../imgBook/img6.jpg'
+import img6 from '../imgBook/img6.png'
 import img7 from '../imgBook/img7.jpg'
 import img8 from '../imgBook/img8.jpg'
 import img9 from '../imgBook/img9.jpg'
 import img10 from '../imgBook/img10.jpg'
 import img11 from '../imgBook/img11.jpg'
-import img12 from '../imgBook/img12.jpg'
+import img12 from '../imgBook/img12.png'
 // Um componente simples chamado Inicial
 const Inicial = () => {
 
@@ -52,7 +52,7 @@ const Inicial = () => {
         const senhaDigitada = document.getElementById('senha').value;
     
         // Verificar se a senha digitada é igual a "1231212"
-        if (senhaDigitada === '1231212') {
+        if (senhaDigitada === '1234') {
             // Redirecionar para a rota /books
             window.location.href = '/book';
         } else {
